@@ -21,7 +21,8 @@ from generator.randomness import size_for
 
 
 def make_windows(random_generator, tier, scenario):
-    count = size_for(random_generator, tier, (8, 12), (50, 100), (1000, 1300))
+    # Preserve the deterministic window-generation contract.
+    count = size_for(random_generator, tier, (8, 12), (50, 100), (1_000, 1_300))
     # The first three windows guarantee two touching pairs.
     windows = [
         [1, 0, 10, random_generator.randint(1, 100)],
