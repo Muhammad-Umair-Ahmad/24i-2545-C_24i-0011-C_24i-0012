@@ -132,7 +132,15 @@ def check_sizes_and_identifiers(case, data):
 
 
 def check_inventory(case, data, rule):
-    """Verify every crate and the capacity as a fraction of total weight."""
+    """Verify crate fields, unique serials and the allowed capacity fraction.
+
+    Each crate contributes its weight to the case total after its field ranges
+    have been checked. Serial numbers are collected separately so duplicate
+    serials can be detected across the complete inventory.
+
+    The final capacity check uses integer arithmetic to enforce the inclusive
+    10% to 70% range without introducing floating-point rounding.
+    """
     crates = data["crates"]
     serials = set()
     total_weight = 0
@@ -148,7 +156,11 @@ def check_inventory(case, data, rule):
         )
         serials.add(crate["serial"])
         total_weight += crate["weight"]
-    rule(len(serials) == len(crates), "V3", "Crate serials must be distinct.")
+    rule(
+        len(serials) == len(crates),
+        "V3",
+        "Crate serials must be distinct.",
+    )
     rule(
         case["capacity"] >= 1
         and total_weight <= 10 * case["capacity"] <= 7 * total_weight,
@@ -226,7 +238,12 @@ def check_network(case, data, rule):
             "Closure-wave size outside allowed range.",
         )
 
-    return {"adjacency": adjacency, "hops": hops, "waves": waves, "closed": closed}
+    return {
+        "adjacency": adjacency,
+        "hops": hops,
+        "waves": waves,
+        "closed": closed,
+    }
 
 
 def check_radio(case, data, rule):
