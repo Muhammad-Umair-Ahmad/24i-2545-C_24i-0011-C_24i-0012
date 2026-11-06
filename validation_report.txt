@@ -1,0 +1,66 @@
+Workbook: cases.xlsx
+Checks: V1-V8 from Project Phase 1.
+PASS 11-00: V1-V7
+PASS 11-01: V1-V7
+PASS 11-02: V1-V7
+PASS 11-03: V1-V7
+PASS 11-04: V1-V7
+PASS 11-05: V1-V7
+PASS 11-06: V1-V7
+PASS 11-07: V1-V7
+PASS 11-08: V1-V7
+PASS 11-09: V1-V7
+PASS 11-10: V1-V7
+PASS 11-11: V1-V7v
+PASS 11-12: V1-V7
+PASS 11-13: V1-V7
+PASS 11-14: V1-V7
+PASS 11-15: V1-V7
+PASS 11-16: V1-V7
+PASS 11-17: V1-V7
+PASS 11-18: V1-V7
+PASS 11-19: V1-V7
+PASS 11-20: V1-V7
+PASS 11-21: V1-V7
+PASS 11-22: V1-V7
+PASS 11-23: V1-V7
+PASS 11-24: V1-V7
+PASS 11-25: V1-V7
+PASS 11-26: V1-V7
+PASS 11-27: V1-V7
+PASS 11-28: V1-V7
+PASS 11-29: V1-V7
+PASS 11-30: V1-V7
+PASS 11-31: V1-V7
+PASS 11-32: V1-V7
+PASS 11-33: V1-V7
+PASS 11-34: V1-V7
+PASS 11-35: V1-V7
+PASS 11-36: V1-V7
+PASS 11-37: V1-V7
+PASS 11-38: V1-V7
+PASS 11-39: V1-V7
+PASS 11-40: V1-V7
+PASS 11-41: V1-V7
+PASS 11-42: V1-V7
+PASS 11-43: V1-V7
+PASS 11-44: V1-V7
+PASS 11-45: V1-V7
+PASS 11-46: V1-V7; V8 trap checked
+PASS 11-47: V1-V7; V8 trap checked
+PASS 11-48: V1-V7; V8 trap checked
+PASS 11-49: V1-V7; V8 trap checked
+Variety: 9 cargo failures, 8 route failures; safety density groups [9, 8, 9].
+Required broken-copy checks:
+REJECTED case_00/invalid_weight.xlsx: V2: 11-00: Invalid crate field.
+REJECTED case_00/unknown_road.xlsx: V3: 11-00: Closure references an unknown road.
+REJECTED case_00/duplicate_closure.xlsx: V4: 11-00: Closure waves must be disjoint.
+REJECTED case_00/wrong_pattern_count.xlsx: V5: 11-00: Wrong count for pattern 0.
+REJECTED case_00/wrong_tour_length.xlsx: V6: 11-00: Wrong closed Manhattan tour length.
+REJECTED case_01/invalid_weight.xlsx: V2: 11-01: Invalid crate field.
+REJECTED case_01/unknown_road.xlsx: V3: 11-01: Closure references an unknown road.
+REJECTED case_01/duplicate_closure.xlsx: V4: 11-01: Closure waves must be disjoint.
+REJECTED case_01/wrong_pattern_count.xlsx: V5: 11-01: Wrong count for pattern 0.
+REJECTED case_01/wrong_tour_length.xlsx: V6: 11-01: Wrong closed Manhattan tour length.
+PASS: two cases, five broken copies each; all ten rejected.
+PASS: all 50 saved cases satisfy all implemented V1-V8 checks.
