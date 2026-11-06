@@ -69,7 +69,7 @@ SCHEMA = {
 
 
 def tier_for(case_number):
-    """Choose a size group using the case number (0 to 49)."""
+    """Choose a size group (0 to 49)."""
     if case_number < 0 or case_number > 49:
         raise ValueError("case number must be in 0..49")
     if case_number < 20:
@@ -89,5 +89,4 @@ def scenario_for(case_number):
 
 def case_id(seed, case_number):
     """For example, seed 11 and case 3 become the text 11-03."""
-    # :02d writes the case number with at least two digits.
     return f"{seed}-{case_number:02d}"

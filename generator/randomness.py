@@ -22,7 +22,6 @@ import random
 
 def rng_for(seed, case_number, module):
     """Create repeatable random numbers for one case and one part of its data."""
-    # Example label: LIFELINE|11|0|crates
     label = f"LIFELINE|{seed}|{case_number}|{module}"
 
     # Hashing turns that label into a consistent number. The same label always gives the same number, even when we run Python again another day.
@@ -31,7 +30,7 @@ def rng_for(seed, case_number, module):
 
     random_seed = int.from_bytes(hash_bytes, "big")
 
-    # Keep a separate generator for crates and roads so they do not interfere.
+    # separate generator for crates and roads so they do not interfere.
     return random.Random(random_seed)
 
 
